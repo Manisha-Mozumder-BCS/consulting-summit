@@ -215,10 +215,10 @@ function HeroSection() {
         </p>
 
         <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-4 leading-relaxed">
-          A one-day summit bringing together consulting firms, startups, investors, students, and industry experts to build a stronger consulting ecosystem.
-        </p>
+          A one-day summit bringing together consulting firms, startups, investors,         students and industry experts to build a stronger consulting ecosystem.
+                </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/90 mb-10">
+                <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/90 mb-10">
           <div className="flex items-center gap-2">
             <Calendar size={18} />
             <span className="font-medium">July 18 &ndash; 19, 2026</span>
@@ -275,7 +275,7 @@ function AboutSection() {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             The Consulting Ecosystem Summit 2026 is an inaugural one-day event bringing together consulting firms,
-            startups, investors, students, and industry experts to build a stronger consulting ecosystem. Hosted by{' '}
+            startups, investors, students and industry experts to build a stronger consulting ecosystem. Hosted by{' '}
             <strong className="text-gray-800">Manisha Mozumder Business Consulting Services</strong> (VAT ID: DE 324594379),
             this summit sets the stage for meaningful connections and real opportunities.
           </p>
@@ -291,7 +291,7 @@ function AboutSection() {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Connect</h3>
             <p className="text-gray-600 leading-relaxed">
-              Meet consulting professionals, founders, investors, and ecosystem builders from across industries.
+              Meet consulting professionals, founders, investors and ecosystem builders from across industries.
             </p>
           </div>
           <div className="text-center p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-[#82ABE3]/30">
@@ -303,7 +303,7 @@ function AboutSection() {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Collaborate</h3>
             <p className="text-gray-600 leading-relaxed">
-              Engage in workshops, round tables, and interactive sessions designed to solve real challenges together.
+              Engage in workshops, round tables and interactive sessions designed to solve real challenges together.
             </p>
           </div>
           <div className="text-center p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-[#82ABE3]/30">
@@ -315,7 +315,7 @@ function AboutSection() {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">Grow Together</h3>
             <p className="text-gray-600 leading-relaxed">
-              Discover opportunities, showcase your startup, and build relationships that drive the future of consulting.
+              Discover opportunities, showcase your startup and build relationships that drive the future of consulting.
             </p>
           </div>
         </div>
@@ -426,7 +426,7 @@ function ExpectSection() {
               A Day of Impact & Opportunity
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              The Consulting Ecosystem Summit is packed with opportunities to learn, network, and grow. Here is what awaits you:
+              The Consulting Ecosystem Summit is packed with opportunities to learn, network and grow. Here is what awaits you:
             </p>
 
             <div className="space-y-4">
@@ -484,7 +484,7 @@ function HighlightsSection() {
   const highlights = [
     {
       icon: <Target size={28} />,
-      title: 'Exhibition & Networking \u2014 All Day',
+      title: 'Exhibition & Networking - All Day',
       description: 'Visit stalls, explore services, connect and collaborate.',
     },
     {
@@ -602,7 +602,7 @@ function VenueSection() {
                 {
                   icon: <Users size={20} />,
                   title: 'Cultural Richness',
-                  desc: 'Explore a city steeped in history, art, and innovation during your time at the summit.',
+                  desc: 'Explore a city steeped in history, art and innovation during your time at the summit.',
                 },
                 {
                   icon: <Lightbulb size={20} />,
@@ -692,8 +692,8 @@ function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed max-w-md">
-              A one-day summit bringing together consulting firms, startups, investors, students, and industry experts to build a stronger consulting ecosystem.
-            </p>
+              A one-day summit bringing together consulting firms, startups, investors,             students and industry experts to build a stronger consulting ecosystem.
+                        </p>
             <p className="text-xs text-gray-600 mt-2">VAT ID: DE 324594379</p>
             <div className="flex items-center gap-4 mt-6">
               <a

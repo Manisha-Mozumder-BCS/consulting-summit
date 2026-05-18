@@ -6,7 +6,7 @@ Landing page for the **Consulting Ecosystem Summit 2026**, hosted by **Manisha M
 
 ## About
 
-A one-day summit bringing together consulting firms, startups, investors, students, and industry experts to build a stronger consulting ecosystem.
+A one-day summit bringing together consulting firms, startups, investors, students and industry experts to build a stronger consulting ecosystem.
 
 **Connect. Collaborate. Grow Together.**
 
