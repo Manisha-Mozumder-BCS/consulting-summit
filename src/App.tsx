@@ -14,7 +14,6 @@ import {
   X,
   Mail,
   Linkedin,
-  Twitter,
   ExternalLink,
   CheckCircle,
   Star,
@@ -105,19 +104,11 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a href="#" className="flex items-center gap-2">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-              style={{ backgroundColor: BRAND_BLUE }}
-            >
-              MM
-            </div>
-            <span
-              className={`font-semibold text-sm sm:text-base transition-colors ${
-                scrolled ? 'text-gray-800' : 'text-white'
-              }`}
-            >
-              Manisha Mozumder
-            </span>
+            <img
+              src={scrolled ? '/images/logo-light.jpg' : '/images/logo-dark.png'}
+              alt="Manisha Mozumder Business Consulting Services"
+              className="h-10 w-auto object-contain"
+            />
           </a>
 
           <div className="hidden lg:flex items-center gap-6">
@@ -215,10 +206,10 @@ function HeroSection() {
         </p>
 
         <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-4 leading-relaxed">
-          A one-day summit bringing together consulting firms, startups, investors,         students and industry experts to build a stronger consulting ecosystem.
-                </p>
+          A one-day summit bringing together consulting firms, startups, investors, students and industry experts to build a stronger consulting ecosystem.
+        </p>
 
-                <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/90 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/90 mb-10">
           <div className="flex items-center gap-2">
             <Calendar size={18} />
             <span className="font-medium">July 18 &ndash; 19, 2026</span>
@@ -276,7 +267,7 @@ function AboutSection() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             The Consulting Ecosystem Summit 2026 is an inaugural one-day event bringing together consulting firms,
             startups, investors, students and industry experts to build a stronger consulting ecosystem. Hosted by{' '}
-            <strong className="text-gray-800">Manisha Mozumder Business Consulting Services</strong> (VAT ID: DE 324594379),
+            <strong className="text-gray-800">Manisha Mozumder Business Consulting Services</strong>,
             this summit sets the stage for meaningful connections and real opportunities.
           </p>
         </div>
@@ -680,36 +671,30 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold"
-                style={{ backgroundColor: BRAND_BLUE }}
-              >
-                MM
-              </div>
+              <img
+                src="/images/logo-dark.png"
+                alt="Manisha Mozumder Business Consulting Services"
+                className="h-12 w-auto object-contain"
+              />
               <div>
                 <div className="text-white font-bold text-lg">Consulting Ecosystem Summit</div>
                 <div className="text-sm text-gray-500">by Manisha Mozumder</div>
               </div>
             </div>
             <p className="text-sm leading-relaxed max-w-md">
-              A one-day summit bringing together consulting firms, startups, investors,             students and industry experts to build a stronger consulting ecosystem.
-                        </p>
-            <p className="text-xs text-gray-600 mt-2">VAT ID: DE 324594379</p>
+              A one-day summit bringing together consulting firms, startups, investors, students and industry experts to build a stronger consulting ecosystem.
+            </p>
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/manisha-mozumder-business-consulting-services/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#82ABE3] transition-colors"
               >
                 <Linkedin size={18} />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#82ABE3] transition-colors"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="#"
+                href="mailto:manisha.mozumder@gmail.com"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#82ABE3] transition-colors"
               >
                 <Mail size={18} />
@@ -738,10 +723,6 @@ function Footer() {
               <li className="flex items-center gap-2">
                 <MapPin size={14} style={{ color: BRAND_BLUE }} />
                 <span>Berlin, Germany</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail size={14} style={{ color: BRAND_BLUE }} />
-                <span>info@consultingsummit.com</span>
               </li>
             </ul>
             <a
