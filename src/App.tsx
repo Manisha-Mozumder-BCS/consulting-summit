@@ -108,7 +108,7 @@ function Navbar() {
             <img
               src={scrolled ? `${BASE}images/logo-dark.png` : `${BASE}images/logo-light.jpg`}
               alt="Manisha Mozumder Business Consulting Services"
-              className={`w-auto object-contain ${scrolled ? 'h-12' : 'h-10 rounded-md'}`}
+              className={`w-auto object-contain ${scrolled ? 'h-16' : 'h-14 rounded-md'}`}
             />
           </a>
 
@@ -675,7 +675,7 @@ function Footer() {
               <img
                 src={`${BASE}images/logo-light.jpg`}
                 alt="Manisha Mozumder Business Consulting Services"
-                className="h-14 w-auto object-contain rounded-md"
+                className="h-16 w-auto object-contain rounded-md"
               />
               <div>
                 <div className="text-white font-bold text-lg">Consulting Ecosystem Summit</div>
