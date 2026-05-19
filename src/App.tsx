@@ -106,9 +106,9 @@ function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a href="#" className="flex items-center gap-2">
             <img
-              src={scrolled ? `${BASE}images/logo-light.jpg` : `${BASE}images/logo-dark.png`}
+              src={scrolled ? `${BASE}images/logo-dark.png` : `${BASE}images/logo-light.jpg`}
               alt="Manisha Mozumder Business Consulting Services"
-              className="h-10 w-auto object-contain"
+              className={`w-auto object-contain ${scrolled ? 'h-12' : 'h-10 rounded-md'}`}
             />
           </a>
 
@@ -673,9 +673,9 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img
-                src={`${BASE}images/logo-dark.png`}
+                src={`${BASE}images/logo-light.jpg`}
                 alt="Manisha Mozumder Business Consulting Services"
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain rounded-md"
               />
               <div>
                 <div className="text-white font-bold text-lg">Consulting Ecosystem Summit</div>
