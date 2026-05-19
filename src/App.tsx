@@ -32,6 +32,7 @@ const REGISTRATION_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSfwXBPXP2zJgyaO7IGYYXdritBnEvJT1m6_i9pWRRpGR6OUaQ/viewform?usp=publish-editor'
 
 const BRAND_BLUE = '#82ABE3'
+const BASE = import.meta.env.BASE_URL
 
 function CountdownTimer() {
   const targetDate = new Date('2026-07-18T09:00:00+02:00').getTime()
@@ -105,7 +106,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a href="#" className="flex items-center gap-2">
             <img
-              src={scrolled ? '/images/logo-light.jpg' : '/images/logo-dark.png'}
+              src={scrolled ? `${BASE}images/logo-light.jpg` : `${BASE}images/logo-dark.png`}
               alt="Manisha Mozumder Business Consulting Services"
               className="h-10 w-auto object-contain"
             />
@@ -177,7 +178,7 @@ function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/hero-berlin.jpg"
+          src={`${BASE}images/hero-berlin.jpg`}
           alt="Berlin skyline at sunset"
           className="w-full h-full object-cover"
           onError={(e) => {
@@ -446,7 +447,7 @@ function ExpectSection() {
 
           <div className="relative">
             <img
-              src="/images/hero-berlin.jpg"
+              src={`${BASE}images/hero-berlin.jpg`}
               alt="Berlin - Summit Location"
               className="w-full rounded-2xl shadow-2xl"
               onError={(e) => {
@@ -567,7 +568,7 @@ function VenueSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img
-              src="/images/hero-berlin.jpg"
+              src={`${BASE}images/hero-berlin.jpg`}
               alt="Berlin, Germany"
               className="w-full rounded-2xl shadow-xl"
               onError={(e) => {
@@ -627,7 +628,7 @@ function CTASection() {
     <section className="relative py-20 sm:py-28 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/hero-berlin.jpg"
+          src={`${BASE}images/hero-berlin.jpg`}
           alt="Berlin"
           className="w-full h-full object-cover"
           onError={(e) => {
@@ -672,7 +673,7 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/images/logo-dark.png"
+                src={`${BASE}images/logo-dark.png`}
                 alt="Manisha Mozumder Business Consulting Services"
                 className="h-12 w-auto object-contain"
               />
