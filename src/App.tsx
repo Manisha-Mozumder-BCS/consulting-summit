@@ -107,7 +107,7 @@ function Navbar() {
           <a href="#" className="flex items-center gap-2">
             <img
               src={scrolled ? `${BASE}images/logo-dark.png` : `${BASE}images/logo-light.jpg`}
-              alt="Manisha Mozumder Business Consulting Services"
+              alt="Manisha Mozumder (Business Consulting Services)"
               className={`w-auto object-contain ${scrolled ? 'h-16' : 'h-14 rounded-md'}`}
             />
           </a>
@@ -268,7 +268,7 @@ function AboutSection() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             The Consulting Ecosystem Summit 2026 is an inaugural one-day event bringing together consulting firms,
             startups, investors, students and industry experts to build a stronger consulting ecosystem. Hosted by{' '}
-            <strong className="text-gray-800">Manisha Mozumder Business Consulting Services</strong>,
+            <strong className="text-gray-800">Manisha Mozumder (Business Consulting Services)</strong>,
             this summit sets the stage for meaningful connections and real opportunities.
           </p>
         </div>
@@ -674,7 +674,7 @@ function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img
                 src={`${BASE}images/logo-light.jpg`}
-                alt="Manisha Mozumder Business Consulting Services"
+                alt="Manisha Mozumder (Business Consulting Services)"
                 className="h-16 w-auto object-contain rounded-md"
               />
               <div>
@@ -740,7 +740,7 @@ function Footer() {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm">
-            &copy; 2026 Manisha Mozumder Business Consulting Services. All rights reserved.
+            &copy; 2026 Manisha Mozumder (Business Consulting Services). All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
