@@ -34,11 +34,10 @@ import {
 const REGISTRATION_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSfwXBPXP2zJgyaO7IGYYXdritBnEvJT1m6_i9pWRRpGR6OUaQ/viewform?usp=publish-editor'
 
-// Ticket registration form URLs — replace these with real Google Form URLs when ready
-const STUDENT_FORM_URL = ''
-const PROFESSIONAL_FORM_URL = ''
-const SHOWCASE_FORM_URL = ''
-const PREMIUM_FORM_URL = ''
+// Ticket registration form URLs
+const STUDENT_FORM_URL = 'https://forms.gle/o6AdfVr112JDCGXG7'
+const PROFESSIONAL_FORM_URL = 'https://forms.gle/dNtKj9gGyYgGEagf7'
+const STARTUP_FORM_URL = 'https://forms.gle/P4A1Au93iF7RY1nL6'
 
 const BRAND_BLUE = '#82ABE3'
 const BASE = import.meta.env.BASE_URL
@@ -637,8 +636,8 @@ function TicketsSection() {
     {
       id: 'student' as Category,
       icon: <GraduationCap size={32} />,
-      label: 'I am a Student',
-      desc: 'Students and university members',
+      label: 'I am a Student / University Club',
+      desc: 'Students and university consulting club members',
     },
     {
       id: 'professional' as Category,
@@ -649,15 +648,15 @@ function TicketsSection() {
     {
       id: 'startup' as Category,
       icon: <Building2 size={32} />,
-      label: 'I am a Startup / Organisation',
-      desc: 'Startups, consulting firms and organisations',
+      label: 'I am a Startup / Business Owner',
+      desc: 'Startups, business owners and organisations',
     },
   ]
 
   const ticketData = {
     student: {
       title: 'Student Pass',
-      subtitle: 'For students and university members.',
+      subtitle: 'For students and university consulting club members.',
       features: [
         'Full summit access',
         'Workshops & seminars',
@@ -667,7 +666,7 @@ function TicketsSection() {
       tagline: 'Empowering the next generation of leaders.',
       color: '#82ABE3',
       icon: <GraduationCap size={28} />,
-      url: STUDENT_FORM_URL || `${BASE}registration/student.html`,
+      url: STUDENT_FORM_URL,
     },
     professional: {
       title: 'Professional Pass',
@@ -682,7 +681,7 @@ function TicketsSection() {
       tagline: 'Expand your network. Grow your impact.',
       color: '#82ABE3',
       icon: <Briefcase size={28} />,
-      url: PROFESSIONAL_FORM_URL || `${BASE}registration/professional.html`,
+      url: PROFESSIONAL_FORM_URL,
     },
     showcase: {
       title: 'Showcase Package',
@@ -697,7 +696,7 @@ function TicketsSection() {
       tagline: 'Showcase. Connect. Get noticed.',
       color: '#82ABE3',
       icon: <Rocket size={28} />,
-      url: SHOWCASE_FORM_URL || `${BASE}registration/showcase.html`,
+      url: STARTUP_FORM_URL,
     },
     premium: {
       title: 'Premium Showcase + Stage',
@@ -712,7 +711,7 @@ function TicketsSection() {
       tagline: 'Stand out. Present. Lead the conversation.',
       color: '#d4a017',
       icon: <Award size={28} />,
-      url: PREMIUM_FORM_URL || `${BASE}registration/premium.html`,
+      url: STARTUP_FORM_URL,
     },
   }
 
