@@ -647,7 +647,7 @@ function TicketsSection() {
     {
       id: 'professional',
       icon: <Briefcase size={28} />,
-      label: 'Professional',
+      label: 'Professional / Generic Ticket',
       desc: 'Consultants, entrepreneurs and individuals',
       url: PROFESSIONAL_FORM_URL,
       color: '#82ABE3',
