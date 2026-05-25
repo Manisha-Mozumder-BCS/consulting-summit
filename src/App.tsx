@@ -25,10 +25,8 @@ import {
   Coffee,
   Mic2,
   Handshake,
-  Award,
   Building2,
   Ticket,
-  ChevronLeft,
 } from 'lucide-react'
 
 const REGISTRATION_URL =
@@ -627,50 +625,33 @@ function VenueSection() {
   )
 }
 
-type Category = 'student' | 'professional' | 'startup' | null
-
 function TicketsSection() {
-  const [selected, setSelected] = useState<Category>(null)
+  const [openDetail, setOpenDetail] = useState<string | null>(null)
 
-  const categories = [
+  const tickets = [
     {
-      id: 'student' as Category,
-      icon: <GraduationCap size={32} />,
-      label: 'I am a Student / University Club',
+      id: 'student',
+      icon: <GraduationCap size={28} />,
+      label: 'Student / University Club',
       desc: 'Students and university consulting club members',
-    },
-    {
-      id: 'professional' as Category,
-      icon: <Briefcase size={32} />,
-      label: 'I am a Professional',
-      desc: 'Consultants, entrepreneurs and individuals',
-    },
-    {
-      id: 'startup' as Category,
-      icon: <Building2 size={32} />,
-      label: 'I am a Startup / Business Owner',
-      desc: 'Startups, business owners and organisations',
-    },
-  ]
-
-  const ticketData = {
-    student: {
-      title: 'Student Pass',
-      subtitle: 'For students and university consulting club members.',
+      url: STUDENT_FORM_URL,
+      color: '#82ABE3',
+      tagline: 'Empowering the next generation of leaders.',
       features: [
         'Full summit access',
         'Workshops & seminars',
         'Networking opportunities',
         'Exhibition access',
       ],
-      tagline: 'Empowering the next generation of leaders.',
-      color: '#82ABE3',
-      icon: <GraduationCap size={28} />,
-      url: STUDENT_FORM_URL,
     },
-    professional: {
-      title: 'Professional Pass',
-      subtitle: 'For consultants, professionals, entrepreneurs & individuals.',
+    {
+      id: 'professional',
+      icon: <Briefcase size={28} />,
+      label: 'Professional',
+      desc: 'Consultants, entrepreneurs and individuals',
+      url: PROFESSIONAL_FORM_URL,
+      color: '#82ABE3',
+      tagline: 'Expand your network. Grow your impact.',
       features: [
         'Full summit access',
         'Workshops & seminars',
@@ -678,90 +659,25 @@ function TicketsSection() {
         'Exhibition access',
         'Ecosystem connections',
       ],
-      tagline: 'Expand your network. Grow your impact.',
-      color: '#82ABE3',
-      icon: <Briefcase size={28} />,
-      url: PROFESSIONAL_FORM_URL,
     },
-    showcase: {
-      title: 'Showcase Package',
-      subtitle: 'For startups, consulting firms & organisations.',
+    {
+      id: 'startup',
+      icon: <Building2 size={28} />,
+      label: 'Startup / Business Owner',
+      desc: 'Startups, business owners and organisations',
+      url: STARTUP_FORM_URL,
+      color: '#82ABE3',
+      tagline: 'Showcase. Connect. Get noticed.',
       features: [
         'Exhibition / stall space',
-        '2 representative passes',
+        'Representative passes',
         'Full summit access',
         'Networking opportunities',
         'Visibility & exposure',
+        'Option to upgrade to Premium Showcase + Stage',
       ],
-      tagline: 'Showcase. Connect. Get noticed.',
-      color: '#82ABE3',
-      icon: <Rocket size={28} />,
-      url: STARTUP_FORM_URL,
     },
-    premium: {
-      title: 'Premium Showcase + Stage',
-      subtitle: 'For those who want maximum visibility & impact.',
-      features: [
-        'Premium stall space',
-        'Stage presentation slot',
-        '3 representative passes',
-        'Investor networking',
-        'Featured visibility',
-      ],
-      tagline: 'Stand out. Present. Lead the conversation.',
-      color: '#d4a017',
-      icon: <Award size={28} />,
-      url: STARTUP_FORM_URL,
-    },
-  }
-
-  const renderTicketCard = (ticket: typeof ticketData.student, isPremium = false) => (
-    <div
-      className={`bg-white rounded-2xl p-8 border-2 transition-all duration-300 hover:shadow-xl flex flex-col ${
-        isPremium ? 'border-yellow-400' : 'border-gray-200 hover:border-[#82ABE3]/50'
-      }`}
-    >
-      {isPremium && (
-        <div className="inline-flex items-center gap-1.5 bg-yellow-50 text-yellow-700 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 self-start border border-yellow-200">
-          <Star size={12} className="fill-yellow-500" /> Premium
-        </div>
-      )}
-      <div
-        className="w-14 h-14 rounded-xl flex items-center justify-center text-white mb-5"
-        style={{ backgroundColor: ticket.color }}
-      >
-        {ticket.icon}
-      </div>
-      <h3 className="text-xl font-bold text-gray-900 mb-1">{ticket.title}</h3>
-      <p className="text-sm text-gray-500 mb-5">{ticket.subtitle}</p>
-
-      <div className="space-y-3 mb-6 flex-grow">
-        {ticket.features.map((f) => (
-          <div key={f} className="flex items-start gap-3">
-            <CheckCircle size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
-            <span className="text-gray-700 text-sm">{f}</span>
-          </div>
-        ))}
-      </div>
-
-      <div
-        className="text-sm font-medium px-4 py-2.5 rounded-xl mb-5"
-        style={{ backgroundColor: isPremium ? '#fef9c3' : '#f0f6ff', color: isPremium ? '#92400e' : '#1e40af' }}
-      >
-        {ticket.tagline}
-      </div>
-
-      <a
-        href={ticket.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 text-white font-semibold px-6 py-3 rounded-full transition-all hover:shadow-lg hover:scale-105 text-center"
-        style={{ backgroundColor: isPremium ? '#d4a017' : BRAND_BLUE }}
-      >
-        <Ticket size={18} /> Register Now
-      </a>
-    </div>
-  )
+  ]
 
   return (
     <section id="tickets" className="py-20 sm:py-28 bg-gray-50">
@@ -777,62 +693,64 @@ function TicketsSection() {
             Choose Your Ticket Option
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Find the option that fits you best and be part of the ecosystem.
+            Select your category and register directly.
           </p>
         </div>
 
-        {!selected ? (
-          <>
-            <p className="text-center text-gray-500 mb-8 font-medium">Select your category to see available passes:</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelected(cat.id)}
-                  className="group bg-white rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-[#82ABE3] cursor-pointer"
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {tickets.map((ticket) => (
+            <div key={ticket.id} className="flex flex-col">
+              <a
+                href={ticket.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-[#82ABE3] flex-grow flex flex-col items-center"
+              >
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-white mx-auto mb-5 group-hover:scale-110 transition-transform"
+                  style={{ backgroundColor: ticket.color }}
                 >
-                  <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-white mx-auto mb-5 group-hover:scale-110 transition-transform"
-                    style={{ backgroundColor: BRAND_BLUE }}
-                  >
-                    {cat.icon}
+                  {ticket.icon}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{ticket.label}</h3>
+                <p className="text-sm text-gray-500 mb-5">{ticket.desc}</p>
+                <span
+                  className="inline-flex items-center gap-2 text-white font-semibold text-sm px-5 py-2.5 rounded-full mt-auto"
+                  style={{ backgroundColor: BRAND_BLUE }}
+                >
+                  <Ticket size={16} /> Register Now
+                </span>
+              </a>
+              <button
+                onClick={() => setOpenDetail(openDetail === ticket.id ? null : ticket.id)}
+                className="mt-3 text-sm font-medium flex items-center justify-center gap-1.5 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                style={{ color: BRAND_BLUE }}
+              >
+                <CheckCircle size={14} />
+                {openDetail === ticket.id ? 'Hide details' : "What's included?"}
+              </button>
+              {openDetail === ticket.id && (
+                <div className="mt-2 bg-white rounded-xl border border-gray-200 p-5 text-left">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">Included</p>
+                  <div className="space-y-2.5">
+                    {ticket.features.map((f) => (
+                      <div key={f} className="flex items-start gap-2.5">
+                        <CheckCircle size={15} className="text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-700 text-sm">{f}</span>
+                      </div>
+                    ))}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{cat.label}</h3>
-                  <p className="text-sm text-gray-500">{cat.desc}</p>
-                </button>
-              ))}
+                  <p
+                    className="text-xs font-medium mt-4 px-3 py-2 rounded-lg"
+                    style={{ backgroundColor: '#f0f6ff', color: '#1e40af' }}
+                  >
+                    {ticket.tagline}
+                  </p>
+                </div>
+              )}
             </div>
-          </>
-        ) : (
-          <div>
-            <button
-              onClick={() => setSelected(null)}
-              className="inline-flex items-center gap-2 text-sm font-medium mb-8 hover:underline"
-              style={{ color: BRAND_BLUE }}
-            >
-              <ChevronLeft size={18} /> Back to categories
-            </button>
-
-            {selected === 'student' && (
-              <div className="max-w-md mx-auto">
-                {renderTicketCard(ticketData.student)}
-              </div>
-            )}
-
-            {selected === 'professional' && (
-              <div className="max-w-md mx-auto">
-                {renderTicketCard(ticketData.professional)}
-              </div>
-            )}
-
-            {selected === 'startup' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                {renderTicketCard(ticketData.showcase)}
-                {renderTicketCard(ticketData.premium, true)}
-              </div>
-            )}
-          </div>
-        )}
+          ))}
+        </div>
 
         <div className="mt-16 bg-white rounded-2xl p-8 border border-gray-200 max-w-3xl mx-auto">
           <h3 className="text-lg font-bold text-gray-900 mb-4">Optional Add-Ons</h3>
