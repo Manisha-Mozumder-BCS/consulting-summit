@@ -41,7 +41,7 @@ const BRAND_BLUE = '#82ABE3'
 const BASE = import.meta.env.BASE_URL
 
 function CountdownTimer() {
-  const targetDate = new Date('2026-07-18T09:00:00+02:00').getTime()
+  const targetDate = new Date('2026-07-24T09:00:00+02:00').getTime()
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
@@ -217,7 +217,7 @@ function HeroSection() {
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/90 mb-10">
           <div className="flex items-center gap-2">
             <Calendar size={18} />
-            <span className="font-medium">July 18 &ndash; 19, 2026</span>
+            <span className="font-medium">July 24, 2026</span>
           </div>
           <div className="hidden sm:block w-1 h-1 rounded-full bg-white/50" />
           <div className="flex items-center gap-2">
@@ -462,7 +462,7 @@ function ExpectSection() {
               <div className="flex items-center gap-3">
                 <Calendar size={20} style={{ color: BRAND_BLUE }} />
                 <div>
-                  <p className="font-bold text-gray-900">July 18 &ndash; 19, 2026</p>
+                  <p className="font-bold text-gray-900">July 24, 2026</p>
                   <p className="text-sm text-gray-500">Berlin, Germany</p>
                 </div>
               </div>
@@ -881,7 +881,7 @@ function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <Calendar size={14} style={{ color: BRAND_BLUE }} />
-                <span>July 18 &ndash; 19, 2026</span>
+                <span>July 24, 2026</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={14} style={{ color: BRAND_BLUE }} />
