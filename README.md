@@ -2,7 +2,7 @@
 
 Landing page for the **Consulting Ecosystem Summit 2026**, hosted by **Manisha Mozumder Business Consulting Services**.
 
-**Event:** July 18-19, 2026 | Berlin, Germany
+**Location:** Berlin, Germany
 
 ## About
 
@@ -71,14 +71,14 @@ consulting-summit-2026/
 
 ## Sections
 
-- **Hero** - Full-screen hero with countdown timer and CTA
+- **Hero** - Full-screen hero with a coming soon feature and CTA
 - **About** - Summit overview with Connect / Collaborate / Grow pillars
 - **Who Should Attend** - 5 audience categories
 - **What to Expect** - Key offerings checklist
 - **Event Highlights** - 6 highlight cards
 - **Venue** - Berlin location with Why Berlin details
 - **CTA** - Registration call-to-action
-- **Footer** - Links, social, and event details
+- **Footer** - Links, social and event details
 
 ## License
 

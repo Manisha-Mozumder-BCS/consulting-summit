@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import {
   MapPin,
-  Calendar,
   Users,
   ArrowRight,
   Globe,
@@ -27,10 +26,8 @@ import {
   Handshake,
   Building2,
   Ticket,
+  Sparkles,
 } from 'lucide-react'
-
-const REGISTRATION_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSfwXBPXP2zJgyaO7IGYYXdritBnEvJT1m6_i9pWRRpGR6OUaQ/viewform?usp=publish-editor'
 
 // Ticket registration form URLs
 const STUDENT_FORM_URL = 'https://forms.gle/o6AdfVr112JDCGXG7'
@@ -40,46 +37,38 @@ const STARTUP_FORM_URL = 'https://forms.gle/P4A1Au93iF7RY1nL6'
 const BRAND_BLUE = '#82ABE3'
 const BASE = import.meta.env.BASE_URL
 
-function CountdownTimer() {
-  const targetDate = new Date('2026-07-24T09:00:00+02:00').getTime()
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-
-  useEffect(() => {
-    const update = () => {
-      const now = new Date().getTime()
-      const diff = targetDate - now
-      if (diff <= 0) return
-      setTimeLeft({
-        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((diff % (1000 * 60)) / 1000),
-      })
-    }
-    update()
-    const interval = setInterval(update, 1000)
-    return () => clearInterval(interval)
-  }, [targetDate])
-
-  const units = [
-    { label: 'Days', value: timeLeft.days },
-    { label: 'Hours', value: timeLeft.hours },
-    { label: 'Minutes', value: timeLeft.minutes },
-    { label: 'Seconds', value: timeLeft.seconds },
-  ]
-
+function ComingSoonCard() {
   return (
-    <div className="flex gap-3 sm:gap-5 justify-center">
-      {units.map((unit) => (
-        <div key={unit.label} className="flex flex-col items-center">
-          <div className="bg-white/15 backdrop-blur-sm rounded-xl w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center border border-white/20">
-            <span className="text-2xl sm:text-3xl font-bold text-white">
-              {String(unit.value).padStart(2, '0')}
+    <div className="relative max-w-xl mx-auto">
+      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-yellow-300 via-white to-yellow-300 opacity-40 blur-lg animate-pulse" />
+      <div className="relative overflow-hidden rounded-3xl border border-white/30 bg-white/15 px-6 py-5 sm:px-10 sm:py-6 shadow-2xl backdrop-blur-md">
+        <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-yellow-300/20 blur-2xl animate-pulse" />
+        <div className="absolute -bottom-10 -left-8 h-28 w-28 rounded-full bg-white/20 blur-2xl animate-pulse" />
+        <div className="relative flex flex-col items-center">
+          <div className="flex items-center gap-3">
+            <Sparkles size={22} className="text-yellow-300 animate-pulse" />
+            <span className="text-2xl sm:text-3xl font-extrabold uppercase tracking-[0.2em] text-white">
+              Coming Soon
             </span>
+            <Sparkles size={22} className="text-yellow-300 animate-pulse" />
           </div>
-          <span className="text-xs sm:text-sm text-white/80 mt-2 font-medium">{unit.label}</span>
+          <p className="mt-3 text-sm sm:text-base font-medium text-white/90">
+            Something remarkable is taking shape in Berlin
+          </p>
+          <div className="mt-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-yellow-200">
+            <span className="h-2 w-2 rounded-full bg-yellow-300 animate-bounce" />
+            <span
+              className="h-2 w-2 rounded-full bg-yellow-300 animate-bounce"
+              style={{ animationDelay: '150ms' }}
+            />
+            <span
+              className="h-2 w-2 rounded-full bg-yellow-300 animate-bounce"
+              style={{ animationDelay: '300ms' }}
+            />
+            <span className="ml-1">More details on the way</span>
+          </div>
         </div>
-      ))}
+      </div>
     </div>
   )
 }
@@ -214,19 +203,14 @@ function HeroSection() {
           A one-day summit bringing together consulting firms, startups, investors, students and industry experts to build a stronger consulting ecosystem.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/90 mb-10">
-          <div className="flex items-center gap-2">
-            <Calendar size={18} />
-            <span className="font-medium">July 24, 2026</span>
-          </div>
-          <div className="hidden sm:block w-1 h-1 rounded-full bg-white/50" />
+        <div className="flex items-center justify-center text-white/90 mb-10">
           <div className="flex items-center gap-2">
             <MapPin size={18} />
             <span className="font-medium">Berlin, Germany</span>
           </div>
         </div>
 
-        <CountdownTimer />
+        <ComingSoonCard />
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
           <a
@@ -370,7 +354,7 @@ function AudienceSection() {
             Built for the Entire Ecosystem
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Whether you are a seasoned consultant, an aspiring founder, or an investor looking for the next opportunity — this summit is for you.
+            Whether you are a seasoned consultant, an aspiring founder or an investor looking for the next opportunity. This summit is for you.
           </p>
         </div>
 
@@ -460,10 +444,10 @@ function ExpectSection() {
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/30 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-lg">
               <div className="flex items-center gap-3">
-                <Calendar size={20} style={{ color: BRAND_BLUE }} />
+                <MapPin size={20} style={{ color: BRAND_BLUE }} />
                 <div>
-                  <p className="font-bold text-gray-900">July 24, 2026</p>
-                  <p className="text-sm text-gray-500">Berlin, Germany</p>
+                  <p className="font-bold text-gray-900">Berlin, Germany</p>
+                  <p className="text-sm text-gray-500">Summit details coming soon</p>
                 </div>
               </div>
             </div>
@@ -879,10 +863,6 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Event Details</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2">
-                <Calendar size={14} style={{ color: BRAND_BLUE }} />
-                <span>July 24, 2026</span>
-              </li>
               <li className="flex items-center gap-2">
                 <MapPin size={14} style={{ color: BRAND_BLUE }} />
                 <span>Berlin, Germany</span>
