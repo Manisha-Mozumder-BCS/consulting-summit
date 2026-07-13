@@ -39,15 +39,15 @@ const BASE = import.meta.env.BASE_URL
 
 function ComingSoonCard() {
   return (
-    <div className="relative max-w-xl mx-auto">
-      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-yellow-300 via-white to-yellow-300 opacity-40 blur-lg animate-pulse" />
-      <div className="relative overflow-hidden rounded-3xl border border-white/30 bg-white/15 px-6 py-5 sm:px-10 sm:py-6 shadow-2xl backdrop-blur-md">
+    <div className="relative max-w-xl mx-auto animate-float">
+      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-yellow-300 via-white to-yellow-300 opacity-60 blur-lg animate-gradient-xy" />
+      <div className="relative overflow-hidden rounded-3xl border border-white/30 bg-white/15 px-6 py-5 sm:px-10 sm:py-6 shadow-2xl backdrop-blur-xl">
         <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-yellow-300/20 blur-2xl animate-pulse" />
         <div className="absolute -bottom-10 -left-8 h-28 w-28 rounded-full bg-white/20 blur-2xl animate-pulse" />
         <div className="relative flex flex-col items-center">
           <div className="flex items-center gap-3">
             <Sparkles size={22} className="text-yellow-300 animate-pulse" />
-            <span className="text-2xl sm:text-3xl font-extrabold uppercase tracking-[0.2em] text-white">
+            <span className="text-2xl sm:text-3xl font-black uppercase tracking-[0.2em] bg-clip-text text-transparent bg-gradient-to-r from-white via-yellow-300 to-yellow-100 animate-shimmer">
               Coming Soon
             </span>
             <Sparkles size={22} className="text-yellow-300 animate-pulse" />
@@ -192,7 +192,6 @@ function HeroSection() {
           Consulting
           <br />
           Ecosystem Summit
-          <span className="block text-yellow-300 mt-2">2026</span>
         </h1>
 
         <p className="text-xl sm:text-2xl font-semibold text-white mb-3">
@@ -252,7 +251,7 @@ function AboutSection() {
             Be Part of the Ecosystem Movement
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            The Consulting Ecosystem Summit 2026 is an inaugural one-day event bringing together consulting firms,
+            The Consulting Ecosystem Summit is an inaugural one-day event bringing together consulting firms,
             startups, investors, students and industry experts to build a stronger consulting ecosystem. Hosted by{' '}
             <strong className="text-gray-800">Manisha Mozumder (Business Consulting Services)</strong>,
             this summit sets the stage for meaningful connections and real opportunities.
